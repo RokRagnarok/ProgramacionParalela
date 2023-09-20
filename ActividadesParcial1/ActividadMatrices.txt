@@ -1,1 +1,44 @@
+#include <stdio.h>
+int main()
+{
+  int mat1[10][10];
+    int mat2[10][10];
+    int mat3[10][10];
 
+     //Dar valores a mat1,2,3
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            mat1[i][j] = i * 10 + j;  
+        }
+    }
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            mat2[i][j] = j * 10 + i;  
+        }
+    }
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            mat3[i][j] = 0;
+        }
+    }
+
+    //Funcion para multiplicar matricees
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            for (int k = 0; k < 10; k++) {
+                mat3[i][j] += mat1[i][k] * mat2[k][j];
+            }
+        }
+    }
+    
+    //Imprime el resultado de la matriz
+    printf("Resultado de la matriz 10 X 10:\n");
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            printf("%d ", mat3[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
